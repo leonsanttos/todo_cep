@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fcfcfc;
+    margin: 0;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Remove os <br> visuais para não quebrar o design */
+br { display: none; }
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+/* Estilo de Opostos dentro da Label */
+label {
+    display: flex;
+    flex-direction: column; /* Label em cima, input embaixo (mais compacto no grid) */
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+    background: transparent;
+}
+
+input[type="text"]:focus {
+    border-bottom-color: #1a1a1a;
+}
+
+/* Botão Salvar */
+.button-wrapper {
+    grid-column: 1 / -1; /* Ocupa as 4 colunas */
+    display: flex;
+    justify-content: flex-end; /* Alinhado à direita */
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover { background: #444; }
+
+/* Divisória */
+.divider {
+    width: 100%;
+    max-width: 900px;
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+    display: block !important; /* Força aparecer mesmo com br hidden */
+}
+
+/* Listagem */
+#form_listagem {
+    width: 100%;
+    max-width: 900px;
+}
+
+#form_listagem form {
+    display: flex;
+    justify-content: space-between; /* Itens à esquerda, botão à direita */
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px 25px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+input[type="button"] {
+    background: transparent;
+    border: 1px solid #1a1a1a;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+footer { margin-top: 40px; color: #ccc; font-size: 0.8rem; }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo de cep</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form method="get" action="." class="grid-form">
+        <label><span>Cep:</span>
+            <input name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+        </label>
+        
+        <label><span>Rua:</span>
+            <input name="rua" type="text" id="rua" />
+        </label>
+        
+        <label><span>Número:</span>
+            <input name="numero" type="text" id="numero" />
+        </label>
+        
+        <label><span>Bairro:</span>
+            <input name="bairro" type="text" id="bairro" />
+        </label>
+        
+        <label><span>Cidade:</span>
+            <input name="cidade" type="text" id="cidade" />
+        </label>
+        
+        <label><span>Estado:</span>
+            <input name="uf" type="text" id="uf" />
+        </label>
+
+        <div class="button-wrapper">
+            <input type="submit" value="Salvar" onclick="salvarte(event);" />
+        </div>
+    </form>
+
+    <hr class="divider">
+
+    <div id="form_listagem">
+        <form>
+            <label for="teste" id="teste"></label>
+            <input type="button" value="Editar" onclick="selecionar()" />
+        </form>
+    </div>
+    
+    <footer>
+        <p>Feito por L</p>
+        <script src="script.js"></script>
+    </footer>
+</body>
+</html>
