@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>todo de cep</title>
+    <title>Gerenciador de CEP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <form method="get" action="." class="grid-form">
         <label><span>Cep:</span>
-            <input name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+            <input name="cep" type="text" id="cep" maxlength="9" onblur="pesquisacep(this.value);" />
         </label>
         
         <label><span>Rua:</span>
@@ -42,8 +42,9 @@
 
     <div id="form_listagem">
         <form>
-            <label for="teste" id="teste"></label>
-            <input type="button" value="Editar" onclick="selecionar()" />
+            <input type="button" value="Editar Selecionado" onclick="selecionar()" />
+            
+            <div id="teste"></div>
         </form>
     </div>
     

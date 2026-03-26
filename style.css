@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
+/* --- Configurações Gerais --- */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #fcfcfc;
@@ -10,12 +11,12 @@ body {
     align-items: center;
 }
 
-/* Remove os <br> visuais para não quebrar o design */
-br { display: none; }
+br { display: none; } /* Mantém o layout limpo ignorando os <br> do HTML */
 
+/* --- Formulário de Cadastro (Grid 4 colunas) --- */
 .grid-form {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 100%;
     max-width: 900px;
@@ -25,10 +26,9 @@ br { display: none; }
     border: 1px solid #eee;
 }
 
-/* Estilo de Opostos dentro da Label */
 label {
     display: flex;
-    flex-direction: column; /* Label em cima, input embaixo (mais compacto no grid) */
+    flex-direction: column;
     font-size: 0.7rem;
     font-weight: 600;
     color: #999;
@@ -51,11 +51,10 @@ input[type="text"]:focus {
     border-bottom-color: #1a1a1a;
 }
 
-/* Botão Salvar */
 .button-wrapper {
-    grid-column: 1 / -1; /* Ocupa as 4 colunas */
+    grid-column: 1 / -1;
     display: flex;
-    justify-content: flex-end; /* Alinhado à direita */
+    justify-content: flex-end;
     margin-top: 20px;
 }
 
@@ -72,39 +71,79 @@ input[type="submit"] {
 
 input[type="submit"]:hover { background: #444; }
 
-/* Divisória */
+/* --- Divisória --- */
 .divider {
     width: 100%;
     max-width: 900px;
     border: 0;
     border-top: 1px solid #eee;
     margin: 40px 0;
-    display: block !important; /* Força aparecer mesmo com br hidden */
+    display: block !important;
 }
 
-/* Listagem */
+/* --- Listagem de Endereços (Conforme sua imagem) --- */
 #form_listagem {
     width: 100%;
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Alinha o botão "Editar" (Selecionar) no topo à direita */
 #form_listagem form {
     display: flex;
-    justify-content: space-between; /* Itens à esquerda, botão à direita */
-    align-items: center;
-    background: #f9f9f9;
-    padding: 15px 25px;
-    border-radius: 8px;
-    border: 1px solid #eee;
+    flex-direction: column; /* Organiza o botão em cima e a lista embaixo */
+    align-items: flex-end;
+    background: transparent;
+    border: none;
+    padding: 0;
 }
 
-input[type="button"] {
-    background: transparent;
+/* Estilo do botão Editar no topo */
+input[type="button"][onclick="selecionar()"] {
+    margin-bottom: 20px;
+    background: #fff;
     border: 1px solid #1a1a1a;
-    padding: 8px 20px;
-    border-radius: 4px;
+    padding: 8px 25px;
     font-weight: 600;
     cursor: pointer;
+    border-radius: 4px;
 }
 
-footer { margin-top: 40px; color: #ccc; font-size: 0.8rem; }
+/* Container onde os itens (P) aparecem */
+#teste {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Cada linha de endereço */
+#teste p {
+    display: flex;
+    justify-content: space-between; /* Empurra o texto para esquerda e o Remover para direita */
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Botão Remover (o X ou texto) */
+#remover {
+    border: 1px solid #1a1a1a;
+    background: #fff;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+#remover:hover {
+    background: #f0f0f0;
+}
+
+footer { margin-top: 60px; color: #ccc; font-size: 0.8rem; text-align: center; }
